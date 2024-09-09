@@ -1,0 +1,29 @@
+services:
+  brain:
+    container_name: agrobrain-api
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+    volumes:
+      - .:/usr/src/api
+    env_file:
+      - path: ./.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    container_name: agrobrain-db
+    restart: always
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  db:

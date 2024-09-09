@@ -1,0 +1,13 @@
+{
+  "document": "575.656.964-20",
+  "name": "Vitória Alves Cunha",
+  "farmName": "Fazenda Brilhante",
+  "city": "Serra",
+  "state": "Espirito Santo",
+  "hectares": 750,
+  "arableArea": 630,
+  "vegetationArea": 100,
+  "crops": [
+    1, 2,4
+  ]
+}
